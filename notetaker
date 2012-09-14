@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+require('coffee-script')
+
+//Lets start the app
+app = require("./lib/app")()

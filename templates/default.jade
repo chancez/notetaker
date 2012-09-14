@@ -1,0 +1,16 @@
+!!! 5
+html(lang="en")
+  head
+    title Notetaker
+    != css('app')
+    != js('app')
+
+    include js_templates
+
+  body
+    .container.header
+      .navbar
+        .navbar-inner
+          a.brand(href="#") Notetaker
+          ul.nav.pull-right
+    .container.content

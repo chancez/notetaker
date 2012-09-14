@@ -1,0 +1,18 @@
+{
+    "name": "notetaker",
+    "author": "Chance <email>",
+    "description": "Software to take notes",
+    "version": "0.0.1",
+    "engines": {
+        "node": ">=0.8.0"
+    },
+    "dependencies": {
+        "express": "3.x",
+        "dropbox": "",
+        "coffee-script": "",
+        "connect-assets": "",
+        "jade": "",
+        "stylus": "",
+        "nib": ""
+    }
+}
