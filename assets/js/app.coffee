@@ -22,7 +22,7 @@ $ ->
       $('.content').html(view.render().el)
 
     login: ->
-      view = new myApp.view.Login()
+      view = new myApp.views.Login()
       $('.content').html(view.render().el)
 
     catchall: (path) ->
