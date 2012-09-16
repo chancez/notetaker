@@ -1,18 +1,17 @@
 myApp.views.Login = Backbone.View.extend({
-  events:
-    "click button": "login"
-  
+  events: 
+    "click .grab_access_token": "grab_access_token"
+
   attributes:
     class: 'row'
 
   render: ->
-    @$el.html(templates.login_view())
-    @
+    access_token = $.cookie('access_token')
+    if not access_token
+      @$el.html(templates.login_view({request_token: myApp.request_token}))
+      @
 
-  login: (ev) ->
-    ev.preventDefault()
-    login_data = @$el.find('form').serializeObject()
-    # We will post this login data to the server
-    $.post('/login/', login_data, (result) ->
+  grab_access_token: () ->
+    $.get('/access_token/', (data) ->
     )
 })

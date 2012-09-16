@@ -32,5 +32,13 @@ $ ->
 
   })
 
-  window.appRouter = new myApp.routers.appRouter()
-  Backbone.history.start()
+  if not $.cookie('request_token')
+    $.get('/request_token/', (data) ->
+      myApp.request_token = data.oauth_token
+      window.appRouter = new myApp.routers.appRouter()
+      Backbone.history.start()
+    )
+  else
+    myApp.request_token = $.cookie('request_token')
+    window.appRouter = new myApp.routers.appRouter()
+    Backbone.history.start()

@@ -4,18 +4,13 @@ script(id="home_view", class="handlebars", type="text/x-handlebars-template")
 script(id="login_view", class="handlebars", type="text/x-handlebars-template")
   .span12
     legend Login
-    form.form-horizontal
-      .control-group
-        label.control-label Email
-        .controls
-          input(type="text", name="email", placeholder="Email")
-      .control-group
-        label.control-label Password
-        .controls
-          input(type="password", name="password", placeholder="Password")
-      .control-group
-        .controls
-          button.btn(type="submit") Sign in
+    ol
+      li
+        a(href="https://www.dropbox.com/1/oauth/authorize?oauth_token={{request_token}}", target="_blank") Authorize the app
+        |  to use your Dropbox.
+      li 
+        | After you have authorized the app 
+        a(class="grab_access_token") click here to grab access token.
 
 script(id="logged_out_nav", class="handlebars", type="text/x-handlebars-template")
   li
