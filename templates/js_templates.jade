@@ -6,7 +6,7 @@ script(id="login_view", class="handlebars", type="text/x-handlebars-template")
     legend Login
     ol
       li
-        a(href="https://www.dropbox.com/1/oauth/authorize?oauth_token={{request_token}}", target="_blank") Authorize the app
+        a(href="https://www.dropbox.com/1/oauth/authorize?oauth_token={{request_token}}&oauth_callback={{oauth_callback}}", target="_blank") Authorize the app
         |  to use your Dropbox.
       li 
         | After you have authorized the app 
@@ -19,3 +19,6 @@ script(id="logged_out_nav", class="handlebars", type="text/x-handlebars-template
 script(id="logged_in_nav", class="handlebars", type="text/x-handlebars-template")
   li
     a(href="#!/logout/") Logout
+
+script(id="logged_in", class="handlebars", type="text/x-handlebars-template")
+  h2 Successfully logged in!

@@ -1,6 +1,6 @@
 dbox = require('dbox')
 
-dropbox = dbox.app({ "app_key": "e0wpxdh95x98j9y", "app_secret": "v15r2tssv5ac9a0" })
+dropbox = dbox.app({ "app_key": "orfem8lt490u9fo", "app_secret": "n35d0g5ugnjlbe1" })
 
 
 module.exports = (app) ->
@@ -18,7 +18,7 @@ module.exports = (app) ->
   app.get('/access_token/', (req, res) ->
     if req.cookies.request_data
       console.log req.cookies.request_data
-      dropbox.accesstoken(req.cookies.req_data, (status, access_token) -> 
+      dropbox.accesstoken(req.cookies.request_data, (status, access_token) ->
         console.log access_token
         res.cookie('access_token', access_token, {})
         console.log(access_token)
