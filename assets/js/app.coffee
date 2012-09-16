@@ -3,6 +3,7 @@
 #= require lib/underscore-min
 #= require_tree lib
 #= require_tree backbone
+#= require util
 
 $ ->
   for template in $('.handlebars')
