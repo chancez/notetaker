@@ -10,18 +10,20 @@ module.exports = (app) ->
 
   app.get('/request_token/', (req, res) ->
     dropbox.requesttoken((status, request_token) ->
-      res.cookie('request_token', request_token.oauth_token, {})
+      res.cookie('request_data', request_token, {})
       res.json(request_token)
     )
   )
 
   app.get('/access_token/', (req, res) ->
-    if req.cookies.request_token
-      dropbox.accesstoken(req.cookies.request_token, (status, access_token) -> 
-        res.cookie('request_token', access_token)
+    if req.cookies.request_data
+      console.log req.cookies.request_data
+      dropbox.accesstoken(req.cookies.req_data, (status, access_token) -> 
+        console.log access_token
+        res.cookie('access_token', access_token, {})
         console.log(access_token)
+        res.json(access_token)
       )
-      console.log req.body
     else
       res.json('Need request token')
   )
