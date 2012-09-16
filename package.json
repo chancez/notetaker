@@ -8,7 +8,7 @@
     },
     "dependencies": {
         "express": "3.x",
-        "dropbox": "",
+        "dbox": "",
         "coffee-script": "",
         "connect-assets": "",
         "jade": "",
